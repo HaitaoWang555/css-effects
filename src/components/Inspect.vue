@@ -74,13 +74,14 @@ export default {
 
 .html {
   width: 100%;
-  height: 20%;
+  min-height: 20%;
   margin-bottom: 1em;
 }
 
 .css {
   width: 100%;
   height: 80%;
+  padding-bottom: 1em;
 }
 
 // Responsive styles
