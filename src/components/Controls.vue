@@ -35,6 +35,7 @@
       <EffectFilter v-model="filters.input" label="Inputs" />
       <EffectFilter v-model="filters.loader" label="Loaders" />
       <EffectFilter v-model="filters.text" label="Text" />
+      <EffectFilter v-model="filters.shape" label="Shape" />
     </div>
   </div>
 </template>
@@ -52,14 +53,17 @@ export default {
         input: true,
         loader: true,
         text: true,
+        shape: true,
       },
     }
   },
   watch: {
-    'filters.button': 'updateFilters',
-    'filters.input': 'updateFilters',
-    'filters.loader': 'updateFilters',
-    'filters.text': 'updateFilters',
+    filters: {
+      deep: true,
+      handler: function() {
+        this.updateFilters()
+      },
+    },
   },
   methods: {
     toggleControls() {

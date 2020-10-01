@@ -1,5 +1,5 @@
 <template>
-  <div ref="box" @click="inspect">
+  <div ref="box" class="effect" @click="inspect">
     <slot></slot>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+.effect {
   display: flex;
   align-items: center;
   justify-content: center;

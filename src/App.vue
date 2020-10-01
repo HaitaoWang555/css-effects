@@ -33,10 +33,14 @@ export default {
       this.inspecting = true
       this.inspectSrc.html = this.effects[name].html
       this.inspectSrc.css = this.effects[name].css
+      document.documentElement.style.overflow = 'hidden'
+      document.body.style.borderRight = 17 + 'px solid transparent'
     },
     closeInspect() {
       this.inspecting = false
       this.inspectSrc = {}
+      document.documentElement.style.overflow = ''
+      document.body.style.borderRight = ''
     },
     shuffle() {
       this.effects = shuffleEffects(this.effects)
